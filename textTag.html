@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>文本标签</title>
+</head>
+<body>
+  <p>
+    床前明月光，<br>
+    疑是地上霜。<br>
+    举头望明月，<br>
+    低头思故乡。
+  </p>
+  <p>开会时间是<strong>下午两点</strong>。</p>
+  <p><em>这句是斜体 Italy~</em></p>
+  <p>
+    <pre><strong>
+      保持
+      原来的
+      格式
+    </strong>
+    </pre>
+  </p>
+  <p>一个常见的错误是把<strong>安分守己</strong>写成<u>安份守己</u></p>
+  <p>今天的特价商品是：<s>三文鱼</s>(已售完)</p>
+  <blockquote cite="https://wangdoc.com/html/text">
+    <p>blockquote是一个块级标签，表示引用他人的话。浏览器会在样式上，与正常文本区别显示。</p>
+  </blockquote>
+  <p>更多资料请看<cite>维基百科</cite>。</p>  <!-- city标签可以单独使用-->
+  <blockquote cite="https://quote.example.com">
+    <p>天才就是 1% 的天赋和99%的汗水。</p>
+  </blockquote>
+  <cite>-- 爱迪生</cite>
+  <p>
+    莎士比亚的《哈姆雷特》有一句著名的台词：
+    <q cite="https://quote.example.com">活着还是死亡，这是一个问题。</q>
+  </p>
+  <pre>
+    <code>
+      int n = Max;
+      int a = 101;
+      for (int i = 0; i < n; i ++) {
+        a += 1;
+      }
+    </code>
+  </pre>
+  <p> Windows可以按下<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Del</kbd>重启</p>
+  <p>Windows 可以按下
+    <kbd> <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Del</kbd> </kbd>
+    重启。</p>
+    <p>如果使用没有定义的变量，浏览器会报错：
+      <samp>Uncaught ReferenceError: foo is not defined</samp>。
+      </p>
+      <blockquote>
+        床前明月光，疑是地上霜。<mark><br>举头望明月，低头思故乡。</mark>
+        </blockquote>
+        <p>文章正文</p>
+    <p><small>以上内容使用创意共享许可证。</small></p>
+    <p>运动会预定<time datetime="2024-12-27">明天</time>举行</p>
+    <p>
+      通过 TCP/IP 协议连接的全球性计算机网络，叫做
+      <dfn>Internet</dfn>
+    </p>
+    <p>通过 TCP/IP 协议连接的全球性计算机网络，叫做<dfn title="全球性计算机网络">Internet</dfn>
+    </p>
+    <p>
+      <abbr title="HyperText Markup Language">HTML</abbr>
+    </p>
+    <abbr title="HyperText Markup Language">HTML</abbr>
+    <del><p>会议5月8日举行</p></del>
+    <ins><p>会议5月9日举行</p></ins>
+ 
+    <ruby>
+      汉<rp>(</rp><rt>han</rt><rp>)</rp>
+      字<rp>(</rp><rt>zi</rt><rp>)</rp>
+      </ruby>
+    <ruby>
+      <rb>汉</rb><rb>字</rb>
+      <rp>(</rp>
+      <rt>han</rt>
+      <rt>zi</rt>
+      <rp>)</rp>
+    </ruby>
+    
+    <p>床前明月光，<bdo dir="ltr">疑是地上霜</bdo>。</p>
+    <p>床前明月光，<bdo dir="rtl">疑是地上霜</bdo>。</p>
+    <p><bdi>床前明月光，疑是地上霜。</bdi></p>
+
+</body>
+<footer>
+  <address>
+    文章的相关问题请联系<a href="3525910649@qq.com">xiaomi 
+      QQmail</a>。
+  </address>
+</footer>
+</html>
+
+<!--
+  <br>  换行 单独使用没有闭合标签
+  <strong>  加粗
+  <em>  斜体
+  <pre>  保持原有格式(仅保留空格和换行)
+  <u>  加下划线表示拼写错
+  <s>  加删除线
+  <q> 引用 与<blockquote>区别是不产生换行  <q>引用内容自动添加半角双引号
+  <code>  本身只表示一行代码
+          需要表示多行代码时必须放在<pre>里使用
+  <kbd>  指接受用户从键盘键入内容 可以嵌套
+  <samp> 表示计算机程序输出内容的一个例子。浏览器默认以等宽字体显示
+  <mark> 高亮显示 默认黄色
+     注意：不要只为了高亮的效果，而使用这个标签，因为不能保证浏览器的处理方式。如果要保证高亮，还是要使用 CSS 样式。
+  <small> 小一号字体显示
+  <time> 为跟时间相关的内容提供机器可读的格式
+  <dfn>  表示术语 本行或本段有其解释
+  <abbr>  表示标签内容是一个缩写。它的title属性给出缩写的完整形式，或者缩写的描述。
+          鼠标悬停在该元素上方时，title属性值作为提示，会完整显示出来。
+  <address>  联系方式 通常放到<footer>
+  <ins> <del> 原始文档插入和删除的内容
+              多用于展示文档的修改
+  <ruby>  东亚文字注音
+    容器标签。如果要使用语音注释，就必须把文字和注释都放在这个标签里面
+    1）<rp>
+         放置括号()
+         对于不支持的浏览器 注音在括号中展示
+    2）<rt>
+         放置语音注释
+    3）<rb>
+         划分文字单位
+         使得一一对应
+  <bdo>  表示文字方向与网页主体内容的方向不一致
+    dir="ltr"  右到左
+    dir="rtr"  左到右
+  <bdi>  不确定文字方向的情况。
+         网页有一个部分是用户输入的内容，但是不知道输入内容的文字方向。
+         这种情况就可以使用<bdi>标签，告诉浏览器，不确定文字的方向，由浏览器自己决定。
+-->
