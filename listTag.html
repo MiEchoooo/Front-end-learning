@@ -1,0 +1,69 @@
+<!--
+列表标签  
+  有序列表：
+    1
+    2
+    3
+  无序列表：
+    ·
+    ·
+    ·
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>列表标签</title>
+  </head>
+  <body>
+    <p><strong>成绩单</strong></p>
+    <ol type="1">
+      <li>小米</li>
+      <ul>
+        <li>语文 100</li>
+        <li>数学 100</li>
+      </ul>
+      <li>小明</li>
+      <ul>
+        <li>语文 98</li>
+        <li>数学 89</li>
+      </ul>
+      <li value="7">小红</li>
+      <ul>
+        <li>语文 95</li>
+        <li>数学 88</li>
+      </ul>
+    </ol>
+    <p><strong>待办事项</strong></p>
+    <ul>
+      <li>概统复习</li>
+      <li>视听说考试</li>
+      <li>数字逻辑复习</li>
+    </ul>
+    <dl>
+      <dt>CPU</dt>
+      <dd>中央处理器</dd>
+
+      <dt>Memory</dt>
+      <dd>内存</dd>
+    
+      <dt>Hard Disk</dt>
+      <dd>硬盘</dd>
+    </dl>
+  </body> 
+</html>
+
+<!--
+  <ol>  有序列表(ordered list)      可嵌套
+    属性：
+      reserved 产生倒序效果
+      start   起始编号
+      type    指定编号模式
+  <ul>  无序列表(unordered list)    可嵌套
+  <li>  用于<ol><ul>内部 表示该项标号
+      具有一个value属性 指定当前编号
+  <dl> 一组术语的列表(description list)
+    <dt>  术语名(description term)
+    <dd>  术语解释(description detail)
+-->
