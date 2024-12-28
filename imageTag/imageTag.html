@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>图像标签</title>
+  </head>
+  <body>
+    <p>危险!<img src="image.png" alt="图片下载失败"></p>
+    <img srcset="image.png,
+             foo.png 1.5x,
+             image.png 2x"
+     src="image.png">
+     <img srcset="1.png 160w,
+             2.png 320w,
+             3.png 640w,
+             4.png 1280w"
+     sizes="(max-width: 440px) 100vw,
+            (max-width: 900px) 33vw,
+            254px"
+     src="foo-1280.jpg">
+    <a href="imageTag.html">
+      <img src="image.png" width="400" height="300">
+    </a>
+
+    <figure>
+      <img src="foo.png">
+      <figcaption>示例图片</figcaption>
+    </figure>
+  </body>
+</html>
+
+<!--
+  <img>  插入图片标签 单独使用
+         与前后文字在同一行
+         可放在<a>中 使得点击跳转
+    属性：
+      <alt> 设定文字说明 当图片显示失败时 图片位置显示该文字
+      <width><heigt>  (建议用CSS)
+      <srcset> <sizes>
+      <referrerpolicy>  <img>导致的图片加载的 HTTP 请求，默认会带有Referer的头信息。
+                        referrerpolicy属性对这个行为进行设置。
+      <crossorigin>  图片和网页属于不同的网站，网页加载图片就会导致跨域请求，对方服务器可能要求跨域认证告诉浏览器
+                     <crossorigin>是否采用跨域的形式下载图片，默认是不采用
+          anonymous：跨域请求不带有用户凭证（通常是 Cookie）。
+          use-credentials：跨域请求带有用户凭证。
+      <loading>  默认是打开网页时加载所有图像 但浪费流量
+          auto：浏览器默认行为，等同于不使用loading属性。
+          lazy：启用懒加载。
+             懒加载：即图片默认不加载，只有即将滚动进入视口，变成用户可见时才会加载
+             使用这个属性的时候，最好指定图片的高和宽。
+          eager：立即加载资源，无论它在页面上的哪个位置。
+  <figure>  将图像和相关信息封装在一起
+    可选子元素：<figcaption>表示图像的文本描述
+                    通常用于放置标题，可以出现多个
+                    等于是一个将主体内容与附加信息，封装在一起的语义容器
+  
+  响应式设计:
+     网页在不同尺寸的设备上，都能产生良好的显示效果，叫做“响应式设计”
+     <img>的"srcset"属性用来指定多张图像，适应不同像素密度的屏幕
+            多个URL + 像素密度倍数 + 字母x
+            srcset属性都不满足条件，那么就加载src属性指定的默认图像
+        "srcset"显示区域一样大小的图像
+        "sizes"不同尺寸的屏幕，显示不同大小的图像
+
+  <picture> 同时适配不同像素密度、不同大小的屏幕
+    <sourse> 主要使用media属性和srcset属性
+       media属性给出媒体查询表达式，srcset属性就是<img>标签的srcset属性
+       <img>标签是默认情况下加载的图像，用来满足上面所有<source>都不匹配的情况
+-->
 
