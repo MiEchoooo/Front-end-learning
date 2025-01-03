@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title> script and noscript </title>
+  </head>
+  <body>
+    <script>
+      console.log('hello world');
+      </script>
+      <noscript>
+        您的浏览器不能执行 JavaScript 语言，页面无法正常显示。
+      </noscript>
+  </body>
+</html>
+
+<!--
+  <script>    用于在网页插入脚本
+  <noscript>  用于指定浏览器不支持脚本时的显示内容。
+
+  <script>用于加载脚本代码，目前主要是加载 JavaScript 代码
+    可以嵌入网页 会立即执行
+    也可以加载外部脚本 由src属性给出外部脚本的地址
+    type属性给出脚本的类型，默认是 JavaScript 代码 可省略
+    type属性也可以设成module，表示这是一个 ES6 模块，不是传统脚本
+    对于不支持ES6模块的浏览器 可以设置nomodule属性(通常与type="module"配合使用，作为老式浏览器的回退方案)
+    <script>还有一些属性 大部分与javascript语言有关
+  <noscript>  用于浏览器不支持或关闭Javascript时所要显示的内容
+    只有当浏览器不能执行JavaScript代码时才会显示
+-->
