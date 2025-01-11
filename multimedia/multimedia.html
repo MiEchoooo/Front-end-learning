@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="utf-8">
+  <title>多媒体标签</title>
+  </head>
+  <body>
+    <video src="example.mp4" width="400" height="400" controls autoplay>
+      <p>视频不支持播放 请下载<a herf="example.mp4">视频文件</a></p>
+    </video>
+    <video width="400" height="400"
+           loop muted
+           poster="image.png"
+           src="example.mp4" controls>
+    </video>
+    <video controls>
+      <source src="example.mp4" type="video/mp4">
+      <source src="example.webm" type="video/webm">
+      <p>你的浏览器不支持 HTML5 视频，请下载<a href="example.mp4">视频文件</a>。</p>
+    </video>
+  </body>
+</html>
+
+<!--
+  多媒体标签
+    <video>  用于放置视频 浏览器支持加载视频格式则会显示一个播放器 否则显示<video>内部子元素
+      属性：
+        1.scr 视频文件网址
+        2.controls(布尔) 播放器是否显示控制栏 无需赋值
+        3.width height 单位像素
+        4.autoplay是否自动播放(bool)
+        5.loop 是都循环播放(bool)
+        6.muted是否默认静音(bool)
+        7.poster 封面图片的URL
+        8.preload是否在播放前缓冲
+           1)none 不缓冲
+           2)metadata仅缓冲视频元数据
+           3)auto可以缓冲整个视频文件
+        9.playsinline Safari浏览器播放视频时会自动全屏 该属性可禁止这种行为(bool)
+        10.crossorigin 是否采用跨域的方式加载视频
+           1)anonymous 跨域请求时，不发送用户凭证，主要是 Cookie
+           2)use-credentials 跨域时发送用户凭证
+        11.currentTime 指定当前播放位置(双精度浮点数 单位为second)
+        12.duration 该属性只读 指示时间轴上的持续播放时间(双精度浮点数 单位为second)
+           流媒体，没有已知的结束时间，属性值为+Infinity
+  为了避免浏览器不支持视频格式，可以使用<source>标签，放置同一个视频的多种格式。      
+-->
