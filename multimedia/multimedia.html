@@ -18,6 +18,29 @@
       <source src="example.webm" type="video/webm">
       <p>你的浏览器不支持 HTML5 视频，请下载<a href="example.mp4">视频文件</a>。</p>
     </video>
+    <embed type="video/webm"
+           src="/media/examples/flower.mp4"
+           width="250"
+           height="200">
+           <embed type="video/quicktime" src="movie.mov" width="640" height="480">
+          <!--用QuickTime插件播放MOV视频文件-->
+    <embed src="whoosh.swf" quality="medium"
+       bgcolor="#ffffff" width="550" height="400"
+       name="whoosh" align="middle" allowScriptAccess="sameDomain"
+       allowFullScreen="false" type="application/x-shockwave-flash"
+       pluginspage="http://www.macromedia.com/go/getflashplayer">
+      <!--启动Flash插件
+          如果浏览器没有安装 就会提示到pluginspage属性指定的网址下载-->
+    <object type="application/pdf"
+            data="media/examples/In-CC0.pdf"
+            width="250"
+            height="200">
+    </object>
+    <object data="movie.swf"
+            type="application/x-shockwave-flash"></object>
+    <object data="movie.swf"
+            type="application/x-shockwave-flash">
+            <param name="foo" value="bar"></object>
   </body>
 </html>
 
@@ -43,5 +66,41 @@
         11.currentTime 指定当前播放位置(双精度浮点数 单位为second)
         12.duration 该属性只读 指示时间轴上的持续播放时间(双精度浮点数 单位为second)
            流媒体，没有已知的结束时间，属性值为+Infinity
-  为了避免浏览器不支持视频格式，可以使用<source>标签，放置同一个视频的多种格式。      
+      为了避免浏览器不支持视频格式，可以使用<source>标签，放置同一个视频的多种格式。
+    <audio> 用于放置音频 用法与<video>基本一样
+      属性也基本一致
+    <track> 用于指定视频的字幕 格式是WebVTT(.vtt文件)
+       放置在<video>标签内部 是一个单独使用的标签 没有结束标签
+       属性：
+         1.lable 播放器显示的字母名称 供用户选择
+         2.kind 字幕的类型 默认为subtitles(将原始声音翻译成外国文字 e.g. 英文视频显示中文字幕)
+                        还有一个为captions(提供原始声音的文字描述 e.g. 英文视频显示英文字幕)
+         3.src vtt字幕文件的网址
+         4.srclang 字幕的语言 必须是有效的语言代码
+         5.default 是否默认打开(bool)
+    <source>  用于<picture>、<video>、<audio>的内部，用于指定一项外部资源 单独使用 无结束标签
+         1.type 指定外部资源的MIME类型
+         2.scr 指定源文件 用于<video>和<audio>
+         3.scrset 指定不同条件下加载的图像文件，用于<picture>
+         4.media 指定媒体查询表达式，用于<picture>
+         5.sizes：指定不同设备的显示大小
+               用于<picture>，必须跟srcset搭配使用
+      具体示例参见相应的容器标签
+    <embed> 用于嵌入外部内容(通常由浏览器插件负责控制) 浏览器插件默认不一致 很可能不是所有浏览器的用户都可访问该部分内容
+       属性：
+         1.height width 显示高度/宽度 单位为像素 不允许百分比
+         2.scr  嵌入的资源的 URL
+         3.type 嵌入资源的 MIME 类型  
+          浏览器通过type属性得到嵌入资源的 MIME 类型
+          一旦该种类型已经被某个插件注册了，就会启动该插件，负责处理嵌入的资源
+    <object> 作用跟<embed>相似，也是插入外部资源
+             有标准化行为，只限于插入少数几种通用资源
+       属性：
+         1.data 嵌入的资源的 URL
+         2.form：当前网页中相关联表单的id属性
+         3.height width 显示高度/宽度 单位为像素 不允许百分比
+         4.type 嵌入资源的 MIME 类型
+         5.typemustmatch 表示data属性与type属性是否必须匹配(bool)
+    <obvjetc>标签是一个容器元素 内部可以使用<parma>标签
+      <param>给出插件所需要的运行参数
 -->
